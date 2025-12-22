@@ -10,49 +10,56 @@
 	<div class="calculator-container">
 		<h2>BMI CALCULATOR</h2>
 		<p class="subtitle">Calculate your Body Mass Index</p>
-
+		
+		<!-- ========== BAGIAN BARU: Tab Navigation ========== -->
 		<div class="tab-navigation">
 			<button class="tab-btn active" onclick="switchTab('calculator')">Calculator</button>
 			<button class="tab-btn" onclick="switchTab('information')">Information</button>
 		</div>
-		
+		<!-- ================================================= -->
+
+		<!-- ========== BAGIAN DIUPDATE: Calculator dibungkus div tab ========== -->
 		<div id="calculator" class="tab-content active">
+			<!-- KODE ORIGINAL MULAI DARI SINI (TIDAK BERUBAH) -->
 			<p class="text">Height</p>
 			<input type="text" id="h" placeholder="cm">
 			<p class="text">Weight</p>
 			<input type="text" id="w" placeholder="kg">
-		
-		<div id="result">
-			<p id="bmi-value"></p>
-			<p id="bmi-category"></p>
-			<p id="bmi-description"></p>
+			
+			<div id="result">
+				<p id="bmi-value"></p>
+				<p id="bmi-category"></p>
+				<p id="bmi-description"></p>
+			</div>
+			
+			<button id="btn" onclick="calculateBMI()">Calculate</button>
+			<p id="info">Please enter height [cm] and weight [kg]</p>
+			
+			<div class="bmi-reference">
+				<h3>BMI Categories:</h3>
+				<div class="reference-item">
+					<span class="ref-color underweight-ref"></span>
+					<span>Underweight: BMI &lt; 18.5</span>
+				</div>
+				<div class="reference-item">
+					<span class="ref-color normal-ref"></span>
+					<span>Normal weight: BMI 18.5 - 24.9</span>
+				</div>
+				<div class="reference-item">
+					<span class="ref-color overweight-ref"></span>
+					<span>Overweight: BMI 25 - 29.9</span>
+				</div>
+				<div class="reference-item">
+					<span class="ref-color obese-ref"></span>
+					<span>Obese: BMI ≥ 30</span>
+				</div>
+			</div>
+			<!-- KODE ORIGINAL SELESAI -->
 		</div>
-		
-		<button id="btn" onclick="calculateBMI()">Calculate</button>
-		<p id="info">Please enter height [cm] and weight [kg]</p>
-		
-		<div class="bmi-reference">
-			<h3>BMI Categories:</h3>
-			<div class="reference-item">
-				<span class="ref-color underweight-ref"></span>
-				<span>Underweight: BMI &lt; 18.5</span>
-			</div>
-			<div class="reference-item">
-				<span class="ref-color normal-ref"></span>
-				<span>Normal weight: BMI 18.5 - 24.9</span>
-			</div>
-			<div class="reference-item">
-				<span class="ref-color overweight-ref"></span>
-				<span>Overweight: BMI 25 - 29.9</span>
-			</div>
-			<div class="reference-item">
-				<span class="ref-color obese-ref"></span>
-				<span>Obese: BMI ≥ 30</span>
-			</div>
-		</div>
-	</div>
-	
-	<div id="information" class="tab-content">
+		<!-- =================================================================== -->
+
+		<!-- ========== BAGIAN BARU: Information Tab ========== -->
+		<div id="information" class="tab-content">
 			<div class="info-section">
 				<h3>What is BMI?</h3>
 				<p>Body Mass Index (BMI) is a simple calculation using a person's height and weight. The formula is BMI = kg/m² where kg is a person's weight in kilograms and m² is their height in meters squared.</p>
@@ -127,8 +134,9 @@
 				</p>
 			</div>
 		</div>
+		<!-- ================================================== -->
 	</div>
-
+	
 	<script src="script.js"></script>
 </body>
 </html>

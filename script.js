@@ -1,3 +1,4 @@
+/* ========== FUNGSI BARU: Tab Switching ========== */
 function switchTab(tabName) {
 	// Remove active class from all tabs and contents
 	document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
