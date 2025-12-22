@@ -2,21 +2,50 @@
 <html>
 <head>
 	<title>BMI CALCULATOR</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div>
+	<div class="calculator-container">
 		<h2>BMI CALCULATOR</h2>
+		<p class="subtitle">Calculate your Body Mass Index</p>
+		
 		<p class="text">Height</p>
-		<input type="text" id="h" >
+		<input type="text" id="h" placeholder="cm">
 		<p class="text">Weight</p>
-		<input type="text" id="w">
-		<p id="result"></p>
-		<button id="btn" onclick="bmi()">Calculate</button>
-		<p id="info">Please enter height[cm] and weight [kg]</p>
+		<input type="text" id="w" placeholder="kg">
+		
+		<div id="result">
+			<p id="bmi-value"></p>
+			<p id="bmi-category"></p>
+			<p id="bmi-description"></p>
+		</div>
+		
+		<button id="btn" onclick="calculateBMI()">Calculate</button>
+		<p id="info">Please enter height [cm] and weight [kg]</p>
+		
+		<div class="bmi-reference">
+			<h3>BMI Categories:</h3>
+			<div class="reference-item">
+				<span class="ref-color underweight-ref"></span>
+				<span>Underweight: BMI &lt; 18.5</span>
+			</div>
+			<div class="reference-item">
+				<span class="ref-color normal-ref"></span>
+				<span>Normal weight: BMI 18.5 - 24.9</span>
+			</div>
+			<div class="reference-item">
+				<span class="ref-color overweight-ref"></span>
+				<span>Overweight: BMI 25 - 29.9</span>
+			</div>
+			<div class="reference-item">
+				<span class="ref-color obese-ref"></span>
+				<span>Obese: BMI ≥ 30</span>
+			</div>
+		</div>
 	</div>
-	<script type="text/javascript" src="script.js"></script>
-
+	
+	<script src="script.js"></script>
 </body>
 </html>
-
