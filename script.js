@@ -1,31 +1,25 @@
 // Function to calculate BMI
 function calculateBMI() {
-	// Get input values
+	
 	const height = parseFloat(document.getElementById('h').value);
 	const weight = parseFloat(document.getElementById('w').value);
 	
-	// Validate inputs
 	if (!height || !weight || height <= 0 || weight <= 0) {
 		showError('Please enter valid height and weight values!');
 		return;
 	}
 	
-	// Calculate BMI (height in cm, convert to meters)
 	const bmi = weight / ((height/100) * (height/100));
 	const bmiValue = bmi.toFixed(1);
 	
-	// Get category and description
 	const category = getBMICategory(bmi);
 	const description = getBMIDescription(bmi);
 	
-	// Display results
 	displayResults(bmiValue, category, description);
 	
-	// Change background color based on category
 	changeBackgroundColor(bmi);
 }
 
-// Function to get BMI category
 function getBMICategory(bmi) {
 	if (bmi < 18.5) {
 		return 'Underweight';
@@ -38,7 +32,6 @@ function getBMICategory(bmi) {
 	}
 }
 
-// Function to get BMI description
 function getBMIDescription(bmi) {
 	if (bmi < 18.5) {
 		return 'You may need to gain weight. Consult a healthcare provider.';
@@ -51,14 +44,12 @@ function getBMIDescription(bmi) {
 	}
 }
 
-// Function to display results
 function displayResults(bmiValue, category, description) {
 	document.getElementById('bmi-value').textContent = `Your BMI is ${bmiValue}`;
 	document.getElementById('bmi-category').textContent = `Category: ${category}`;
 	document.getElementById('bmi-description').textContent = description;
 }
 
-// Function to change background color based on BMI category
 function changeBackgroundColor(bmi) {
 	let bgColor = "";
 	
@@ -75,17 +66,14 @@ function changeBackgroundColor(bmi) {
 	document.body.style.backgroundImage = bgColor;
 }
 
-// Function to show error messages
 function showError(message) {
 	document.getElementById('bmi-value').textContent = '⚠️ Error';
 	document.getElementById('bmi-category').textContent = message;
 	document.getElementById('bmi-description').textContent = '';
 	
-	// Reset background to default
 	document.body.style.backgroundImage = "linear-gradient(120deg,#ff6b6b,#5f27cd)";
 }
 
-// Allow calculation on Enter key press
 document.getElementById('h').addEventListener('keypress', function(event) {
 	if (event.key === 'Enter') {
 		calculateBMI();
