@@ -8,133 +8,43 @@
 </head>
 <body>
 	<div class="calculator-container">
-		<h2>BMI CALCULATOR</h2>
+		<h2>BMI CALCULATOR BODY</h2>
 		<p class="subtitle">Calculate your Body Mass Index</p>
 		
-		<!-- ========== BAGIAN BARU: Tab Navigation ========== -->
-		<div class="tab-navigation">
-			<button class="tab-btn active" onclick="switchTab('calculator')">Calculator</button>
-			<button class="tab-btn" onclick="switchTab('information')">Information</button>
+		
+		<p class="text">Height</p>
+		<input type="text" id="h" placeholder="cm">
+		<p class="text">Weight</p>
+		<input type="text" id="w" placeholder="kg">
+		
+		<div id="result">
+			<p id="bmi-value"></p>
+			<p id="bmi-category"></p>
+			<p id="bmi-description"></p>
 		</div>
-		<!-- ================================================= -->
-
-		<!-- ========== BAGIAN DIUPDATE: Calculator dibungkus div tab ========== -->
-		<div id="calculator" class="tab-content active">
-			<!-- KODE ORIGINAL MULAI DARI SINI (TIDAK BERUBAH) -->
-			<p class="text">Height</p>
-			<input type="text" id="h" placeholder="cm">
-			<p class="text">Weight</p>
-			<input type="text" id="w" placeholder="kg">
-			
-			<div id="result">
-				<p id="bmi-value"></p>
-				<p id="bmi-category"></p>
-				<p id="bmi-description"></p>
+		
+		<button id="btn" onclick="calculateBMI()">Calculate</button>
+		<p id="info">Please enter height [cm] and weight [kg]</p>
+		
+		<div class="bmi-reference">
+			<h3>BMI Categories:</h3>
+			<div class="reference-item">
+				<span class="ref-color underweight-ref"></span>
+				<span>Underweight: BMI &lt; 18.5</span>
 			</div>
-			
-			<button id="btn" onclick="calculateBMI()">Calculate</button>
-			<p id="info">Please enter height [cm] and weight [kg]</p>
-			
-			<div class="bmi-reference">
-				<h3>BMI Categories:</h3>
-				<div class="reference-item">
-					<span class="ref-color underweight-ref"></span>
-					<span>Underweight: BMI &lt; 18.5</span>
-				</div>
-				<div class="reference-item">
-					<span class="ref-color normal-ref"></span>
-					<span>Normal weight: BMI 18.5 - 24.9</span>
-				</div>
-				<div class="reference-item">
-					<span class="ref-color overweight-ref"></span>
-					<span>Overweight: BMI 25 - 29.9</span>
-				</div>
-				<div class="reference-item">
-					<span class="ref-color obese-ref"></span>
-					<span>Obese: BMI ≥ 30</span>
-				</div>
+			<div class="reference-item">
+				<span class="ref-color normal-ref"></span>
+				<span>Normal weight: BMI 18.5 - 24.9</span>
 			</div>
-			<!-- KODE ORIGINAL SELESAI -->
-		</div>
-		<!-- =================================================================== -->
-
-		<!-- ========== BAGIAN BARU: Information Tab ========== -->
-		<div id="information" class="tab-content">
-			<div class="info-section">
-				<h3>What is BMI?</h3>
-				<p>Body Mass Index (BMI) is a simple calculation using a person's height and weight. The formula is BMI = kg/m² where kg is a person's weight in kilograms and m² is their height in meters squared.</p>
-
-				<div class="formula-box">
-					<strong>Formula:</strong> BMI = Weight (kg) ÷ Height² (m²)
-				</div>
-
-				<h3>BMI Categories Explained</h3>
-				<div class="info-categories">
-					<div class="info-cat-item">
-						<div class="info-cat-dot" style="background: #74b9ff;"></div>
-						<div>
-							<strong>Underweight (BMI &lt; 18.5)</strong><br>
-							<small>May indicate malnutrition or other health problems. Consider consulting a healthcare provider.</small>
-						</div>
-					</div>
-					<div class="info-cat-item">
-						<div class="info-cat-dot" style="background: #55efc4;"></div>
-						<div>
-							<strong>Normal Weight (BMI 18.5 - 24.9)</strong><br>
-							<small>Indicates a healthy weight range. Maintain your current lifestyle and healthy habits.</small>
-						</div>
-					</div>
-					<div class="info-cat-item">
-						<div class="info-cat-dot" style="background: #fdcb6e;"></div>
-						<div>
-							<strong>Overweight (BMI 25 - 29.9)</strong><br>
-							<small>May increase risk of health problems. Consider lifestyle changes including diet and exercise.</small>
-						</div>
-					</div>
-					<div class="info-cat-item">
-						<div class="info-cat-dot" style="background: #ff7675;"></div>
-						<div>
-							<strong>Obese (BMI ≥ 30)</strong><br>
-							<small>Significantly increases risk of serious health conditions. Consult a healthcare provider for guidance.</small>
-						</div>
-					</div>
-				</div>
-
-				<h3>Limitations of BMI</h3>
-				<p>While BMI is a useful screening tool, it has some limitations:</p>
-				<ul>
-					<li>Does not distinguish between muscle and fat mass</li>
-					<li>May not accurately reflect body composition in athletes</li>
-					<li>Does not account for age, gender, or ethnicity differences</li>
-					<li>Should be used alongside other health assessments</li>
-				</ul>
-
-				<h3>Health Tips</h3>
-				<h4>For Maintaining Healthy Weight:</h4>
-				<ul>
-					<li>Eat a balanced diet with plenty of fruits and vegetables</li>
-					<li>Exercise regularly (at least 30 minutes daily)</li>
-					<li>Stay hydrated - drink 8 glasses of water per day</li>
-					<li>Get adequate sleep (7-8 hours per night)</li>
-					<li>Manage stress effectively</li>
-					<li>Regular health check-ups</li>
-				</ul>
-
-				<h4>When to Seek Medical Advice:</h4>
-				<p>Consult a healthcare provider if:</p>
-				<ul>
-					<li>Your BMI is outside the healthy range</li>
-					<li>You have concerns about your weight</li>
-					<li>You're planning significant dietary or exercise changes</li>
-					<li>You have other health risk factors</li>
-				</ul>
-
-				<p style="margin-top: 20px; font-size: 12px; color: #888; text-align: center;">
-					<strong>Disclaimer:</strong> BMI is a screening tool and not a diagnostic tool. Always consult with healthcare professionals for personalized medical advice.
-				</p>
+			<div class="reference-item">
+				<span class="ref-color overweight-ref"></span>
+				<span>Overweight: BMI 25 - 29.9</span>
+			</div>
+			<div class="reference-item">
+				<span class="ref-color obese-ref"></span>
+				<span>Obese: BMI ≥ 30</span>
 			</div>
 		</div>
-		<!-- ================================================== -->
 	</div>
 	
 	<script src="script.js"></script>
