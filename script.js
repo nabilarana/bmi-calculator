@@ -1,3 +1,4 @@
+// Function to calculate BMI
 function calculateBMI() {
 	
 	const height = parseFloat(document.getElementById('h').value);
