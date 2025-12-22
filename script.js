@@ -1,3 +1,13 @@
+function switchTab(tabName) {
+	// Remove active class from all tabs and contents
+	document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+	document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+	
+	// Add active class to selected tab and content
+	event.target.classList.add('active');
+	document.getElementById(tabName).classList.add('active');
+}
+
 // Function to calculate BMI
 function calculateBMI() {
 	// Get input values
