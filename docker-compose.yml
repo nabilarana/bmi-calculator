@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  bmi-calculator:
+    image: docker.io/nabilarana/bmi-calculator:1
+    ports:
+      - "8080:80"
+    restart: unless-stopped

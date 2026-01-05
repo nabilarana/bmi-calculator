@@ -1,0 +1,1 @@
+FROM nabilarana/bmi-calculator/my-static:latest

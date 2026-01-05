@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  bmi-calculator:
+    image: nabilarana/bmi-calculator/my-static:latest
+    container_name: bmi
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
